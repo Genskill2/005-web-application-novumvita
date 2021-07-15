@@ -79,7 +79,7 @@ def edit(pid):
     elif request.method == "POST":
         description = request.form.get('description')
         sold = request.form.get("sold")
-        if sold is:
+        if sold is not None:
             today=str(datetime.date.today())
             cursor.execute(f"update pet set sold = '{today}' where id = {pid}")
         cursor.execute(f"update pet set description = '{description}' where id = {pid}")
